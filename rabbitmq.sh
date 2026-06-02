@@ -7,7 +7,7 @@ validate "adding rabbitmq repo"
 dnf install rabbitmq-server -y
 validate "installing Rabbitmq server"
 
-systemd_service_start rabbitmq
+systemd_service_start rabbitmq-server
 validate "enabling and starting rabbitmq server" 
 
 rabbitmqctl list_users | grep -w roboshop || rabbitmqctl add_user roboshop roboshop123 
