@@ -16,3 +16,5 @@ validate "changing the port binding of mongod server for allowing remote connect
 
 systemctl restart mongod
 validate "Restarting the mongodb server"
+
+caculate_total_time

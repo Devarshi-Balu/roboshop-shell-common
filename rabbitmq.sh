@@ -15,3 +15,5 @@ validate "adding roboshop user to the rabbitmq server"
 
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
 validate "setting roboshop user permissions in rabbitmq server"
+
+caculate_total_time

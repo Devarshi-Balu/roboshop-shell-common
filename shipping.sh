@@ -48,3 +48,5 @@ if [ $? -ne 0 ]; then
 else
     echo -e "data is already loaded ... $Y SKIPPING $N"
 fi
+
+caculate_total_time

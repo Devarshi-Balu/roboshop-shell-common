@@ -15,17 +15,11 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-user_id=$(id -u)
-
-if [[ $user_id -ne 0 ]]; then 
-    echo "Please run the script as root user"; 
-    exit 1; 
-fi
-
 #function for validating the commands executions with exit status  
 function validate(){
     if [[ "$?" -ne 0 ]]; then 
         echo -e "$1 ... $R Failure $N";
+        caculate_total_time
         exit 1;
     else 
         echo -e "$1 ... $G Success $N";
@@ -64,3 +58,27 @@ function systemd_service_start(){
     systemctl start $service
     validate "enabling and starting the $service service"
 }
+
+
+function caculate_total_time(){
+    end_time=$(date +%s)
+    time_taken=$(( $end_time - $start_time ))
+    seconds=$(( time_taken % 60 ))
+    minutes=$(( time_taken/60 % 60 ))
+    hours=$(( time_taken/60/60 ))
+
+    echo -e "Script run ended @ $B ... $(date) ... $N"
+    echo "===========Total Time Taken================"
+    echo -e "---------($B ${hours} hrs, ${minutes} min, ${seconds} sec $N)-----------"
+    echo "==========================================="
+}
+
+start_time=$(date +%s)
+echo -e "Script run started @ $B ... $(date) ... $N"
+
+user_id=$(id -u)
+if [[ $user_id -ne 0 ]]; then 
+    echo -e "$R Please run the script as root user $N"; 
+    caculate_total_time
+    exit 1; 
+fi

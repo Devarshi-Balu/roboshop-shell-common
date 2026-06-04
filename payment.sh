@@ -28,3 +28,5 @@ validate "copying the payment service file"
 
 systemd_service_start payment
 validate "enabling and starting the service"
+
+caculate_total_time

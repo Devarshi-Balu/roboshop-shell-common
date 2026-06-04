@@ -16,3 +16,5 @@ validate "disabling the protected-mode of redis"
 
 systemd_service_start redis
 validate "Enabling and starting redis service"
+
+caculate_total_time

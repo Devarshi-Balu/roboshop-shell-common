@@ -31,3 +31,5 @@ validate "copying the nginx config file"
 
 systemctl restart nginx 
 validate "restarting nginx module"
+
+caculate_total_time

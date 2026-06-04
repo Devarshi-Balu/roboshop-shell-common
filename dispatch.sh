@@ -33,3 +33,5 @@ validate "copying the dispatch service file"
 
 systemd_service_start dispatch
 validate "enabling and starting the dispatch service"
+
+caculate_total_time

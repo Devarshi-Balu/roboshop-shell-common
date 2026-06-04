@@ -27,3 +27,5 @@ validate "copying the user service file"
 
 systemd_service_start user
 validate "enabling and starting the user service"
+
+caculate_total_time

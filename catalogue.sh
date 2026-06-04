@@ -44,3 +44,5 @@ if [ "$INDEX" -lt 0 ]; then
 else
     echo -e "Master data already loaded ... $Y SKIPPING ....$N"
 fi
+
+caculate_total_time

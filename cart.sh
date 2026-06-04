@@ -28,3 +28,5 @@ validate "copying the cart service file"
 
 systemd_service_start cart
 validate "enabling and starting the cart service"
+
+caculate_total_time
